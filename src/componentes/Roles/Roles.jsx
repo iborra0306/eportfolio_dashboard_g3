@@ -1,8 +1,16 @@
-const Roles = (props) => {
+import { useContext } from "react";
+import TokenContext from "../../context/TokenContext/TokenContext";
+import UserContext from "../../context/UserContext/UserContext";
+const Roles = () => {
+    
+    const token = useContext(TokenContext);
+    const usuario = useContext(UserContext);
+    
     return(
         <aside>
             <h2>ROLES</h2>
-            <p>{props.token}</p>
+            <p>{token}</p>
+            <p>Usuario: {usuario}</p>
         </aside> 
     )
 }
