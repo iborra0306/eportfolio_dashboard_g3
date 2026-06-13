@@ -1,19 +1,23 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState} from 'react';
+import {Route, Routes} from 'react-router-dom';
 
 import Cabecera from './componentes/Cabecera/Cabecera';
 import Roles from './componentes/Roles/Roles';
 import Main from './componentes/Main/Main';
+import NuevaEvidencia from './componentes/NuevaEvidencia/NuevaEvidencia';
+import FuncionalidadEstudiante from './paginas/FuncionalidadEstudiante/FuncionalidadEstudiante';
+import FuncionalidadDocente from './paginas/FuncionalidadDocente/FuncionalidadDocente';
 
 import TokenContext from './context/TokenContext/TokenContext';
 import UserContext from './context/UserContext/UserContext';
 
 function App() {
 
-  let usuario = "Gabriel"
-  let token = "token"
-  let menu = "menu"
+  const usuario = "Victor"
+  const token = "token"
+  const menu = "menu"
 
   const [user, setUser] = useState(usuario)
 
@@ -34,7 +38,11 @@ function App() {
                 <Roles></Roles>
               </div>         
               <div className="main col-9 h-100">
-                <Main menu={menu}></Main>
+                  <Routes>
+                    <Route path='/' element={<Main menu={menu}></Main>}/>
+                    <Route path='/funcionalidadestuiante/:moduloId' element={<FuncionalidadEstudiante></FuncionalidadEstudiante>}></Route>
+                    <Route path='/funcionalidaddocente/:moduloId' element={<FuncionalidadDocente></FuncionalidadDocente>}></Route>
+                  </Routes>
               </div>  
           </div>
         </UserContext.Provider>
