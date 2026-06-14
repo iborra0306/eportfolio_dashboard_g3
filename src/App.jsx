@@ -9,6 +9,7 @@ import Main from './componentes/Main/Main';
 import NuevaEvidencia from './componentes/NuevaEvidencia/NuevaEvidencia';
 import FuncionalidadEstudiante from './paginas/FuncionalidadEstudiante/FuncionalidadEstudiante';
 import FuncionalidadDocente from './paginas/FuncionalidadDocente/FuncionalidadDocente';
+import PaginaFamiliasProfesionales from "./paginas/PaginaFamiliasProfesionales/PaginaFamiliasProfesionales";
 
 import TokenContext from './context/TokenContext/TokenContext';
 import UserContext from './context/UserContext/UserContext';
@@ -40,8 +41,9 @@ function App() {
               <div className="main col-9 h-100">
                   <Routes>
                     <Route path='/' element={<Main menu={menu}></Main>}/>
-                    <Route path='/funcionalidadestuiante/:moduloId' element={<FuncionalidadEstudiante></FuncionalidadEstudiante>}></Route>
+                    <Route path='/funcionalidadestudiante/:moduloId' element={<FuncionalidadEstudiante></FuncionalidadEstudiante>}></Route>
                     <Route path='/funcionalidaddocente/:moduloId' element={<FuncionalidadDocente></FuncionalidadDocente>}></Route>
+                    <Route path="/familiasprofesionales" element={<PaginaFamiliasProfesionales />} />
                   </Routes>
               </div>  
           </div>

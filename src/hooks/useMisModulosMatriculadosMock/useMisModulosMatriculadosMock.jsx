@@ -1,19 +1,18 @@
 import { useContext, useState } from "react"
-import impartidos from "../../mocks/mock-impartido/mock-impartido"
+import modulosMatriculados from "../../mocks/mock-matriculado/mock-matriculado"
 import UserContext from "../../context/UserContext/UserContext"
 import { useEffect } from "react"
 
-function useMisModulosImpartidos() {
+function useMisModulosMatriculadosMock() {
     const usuario = useContext(UserContext)
-    
-        const[buscando,setBuscando]=useState(false)
+    const[buscando,setBuscando]=useState(false)
         
     const[lista,setLista]=useState([])
 
     useEffect(()=>{
-            setLista(impartidos[usuario]?.lista ?? [])
+            setLista(modulosMatriculados[usuario]?.lista ?? [])
         }, [usuario])
 
     return{buscando,lista}
 }
-export default useMisModulosImpartidos;
+export default useMisModulosMatriculadosMock;

@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import UserContext from "../../context/UserContext";
-import getMisModulosMatriculados from "../../servicios/getMisModulosMatriculados";
+import getRolesPorUsuario from "../../servicios/getRolesPorUsuario";
 
-function useMisModulosMatriculados() {
+function useRoles() {
   const usuario = useContext(UserContext);
 
   const [lista, setLista] = useState([]);
@@ -15,8 +15,8 @@ function useMisModulosMatriculados() {
     }
 
     setCargando(true);
-    getMisModulosMatriculados(usuario).then((modulos) => {
-      setLista(modulos);
+    getRolesPorUsuario(usuario).then((roles) => {
+      setLista(roles);
       setCargando(false);
     });
   }, [usuario]);
@@ -24,4 +24,4 @@ function useMisModulosMatriculados() {
   return { lista, cargando };
 }
 
-export default useMisModulosMatriculados;
+export default useRoles;

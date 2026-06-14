@@ -3,7 +3,7 @@ import roles from "../../mocks/mock-roles/mock-roles"
 import UserContext from "../../context/UserContext/UserContext"
 
 
-function useRoles() {
+function useRolesMock() {
     const usuario = useContext(UserContext)
     const[buscando,setBuscando]=useState(false)
     const[lista,setLista]=useState([])
@@ -15,4 +15,4 @@ function useRoles() {
     return{buscando,lista }
 
 }
-export default useRoles;
+export default useRolesMock

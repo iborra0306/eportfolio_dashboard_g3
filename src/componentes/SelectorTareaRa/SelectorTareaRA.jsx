@@ -6,8 +6,11 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import tareasRA from '../../mocks/mock-tareasRA/moc-tareasRA';
 
+import useTareasPorRA from "../../hooks/useTareasPorRa/useTareasPorRa";
+
 const SelectorTareaRA = ({onSelect}) => {
 
+    const { lista: tareas, cargando } = useTareasPorRA();
     const [seleccionada, setTareaR] = React.useState('');
 
     const handleChange = (event) => {

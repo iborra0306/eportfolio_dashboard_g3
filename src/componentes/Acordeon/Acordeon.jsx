@@ -3,9 +3,9 @@ import AccordionActions from '@mui/material/AccordionActions';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import useRoles from '../../hooks/UseRoles/UseRoles';
-import useMisModulosImpartidos from '../../hooks/UseMisModulosImpartidos/UseMisModulosImpartidos';
-import useMisModulosMatriculados from '../../hooks/UseMisModulosMatriculados/UseMisModulosMatriculados';
+import useRoles from '../../hooks/useRolesMock/useRolesMock';
+import useMisModulosImpartidos from '../../hooks/useMisModulosImpartidosMock/useMisModulosImpartidosMock';
+import useMisModulosMatriculados from '../../hooks/useMisModulosMatriculadosMock/useMisModulosMatriculadosMock';
 import opcionesMenu from '../../mocks/mock-administrador/mock-administrador';
 import { Link } from 'react-router-dom';
 
@@ -55,13 +55,13 @@ function Acordeon() {
 
     function generarOpcionesEstudiante(modulo) {
         return (<AccordionDetails key={modulo.id}>
-        <Link to={"/funcionalidadestuiante/" + modulo.id} >{modulo.nombre}</Link>
+        <Link to={"/funcionalidadestudiante/" + modulo.id} >{modulo.nombre}</Link>
         </AccordionDetails>)
     }
 
     function generarOpcionesAdministrador(opcion) {
         return (<AccordionDetails key={opcion.nombre}>
-        {opcion.nombre}
+        <Link to="/familiasprofesionales">{opcion.nombre}</Link>
         </AccordionDetails>
 
         )
